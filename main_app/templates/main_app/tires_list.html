@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Tires List</h1>
+
+{% for tire in tires_list %}
+  <a href="{% url 'tires_detail' tire.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ tire.name }}</span>
+            <p>Origin: {{ tire.origin }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
